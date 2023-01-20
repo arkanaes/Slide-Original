@@ -1,0 +1,228 @@
+@import url('/font/Oswald/Oswald-VariableFont_wght.ttf');
+
+:root {
+    --style-max-height: 400px;
+    --style-color-primary: rgb(0, 72, 168);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: 'Oswald', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.slide-main {
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+
+.slide-botao{
+  
+    z-index: 20;
+    cursor: pointer;
+}
+@media (min-width: 768px){
+    .slide-botao{
+        position: absolute;
+    }
+}
+.slide-botoes-flecha{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    z-index: 10;
+    transition: 1s;
+}
+.slide-botoes-flecha:hover{
+    opacity: 0.6;
+}
+@media (max-width: 768px){
+    .slide-botoes-flecha{
+        display: none;
+    }
+
+}
+.slide-botao-flecha-esquerda,.slide-botao-flecha-direita {
+    background-color: var(--style-color-primary);
+    width: 50px;
+    fill: white;
+    border-radius: 50px;
+    width: 70px;
+    padding: 5px 10px;
+}
+.slide-botao-flecha-esquerda:hover,.slide-botao-flecha-direita:hover{
+    cursor: pointer; 
+    background-color: black;
+}
+.slide {
+    display: none;
+    position: relative;
+    min-width: 300px;
+    background-color: black;
+
+}
+.slide-ativo{
+    animation-name: opacidade;
+    animation-duration: 2s;
+    display: block;
+}
+
+@keyframes opacidade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.slide-sombra {
+    position: relative;
+    display: flex;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+}
+.slide-so-escurece{
+
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slide-image {
+
+    min-width: 300px;
+    max-height: var(--style-max-height);
+    object-fit: cover;
+    display: block;
+    width: 100%;
+}
+
+.slide-conteudo {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+}
+
+.slide-titulo {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.slide-botao {
+    color: white;
+    border: none;
+    background-color: rgb(40, 182, 40);
+    border-radius: 50px;
+    font-size: 1.3rem;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.slide-destaque {
+    display: inline;
+    background-color: var(--style-color-primary);
+    border-radius: 10px;
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    .slide-descricao p {
+        padding: 20px 0;
+    }
+
+    .slide-titulo {
+        padding: 5px 0;
+        font-size: 4vw;
+    }
+
+    .slide-descricao {
+        padding: 5px 0;
+    }
+
+    .slide-botao {
+        padding: 10px 0;
+        display: inline;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .slide-conteudo-esquerda {
+        width: 70%;
+    }
+
+    .slide-conteudo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        color: white;
+    }
+
+    .slide-descricao p {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+}
+
+.slide-lista {
+    background-color: var(--style-color-primary);
+
+}
+.slide-lista ul { 
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+
+.slide-lista ul li {
+    position: relative;
+    z-index: 50;
+    width: 150px;
+    margin: 0 5px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+ 
+.slide-lista ul li:hover {
+    scale: 1.1;
+    position: relative;
+}
+
+.slide-lista ul li img {
+    height: 100%;
+}
+.slide-lista ul li img, .radio-slide-sombra{
+    border-radius: 2px;
+}
+.radio-slide-sombra{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+.radio-slide-sombra:hover{
+    cursor: pointer;
+}
+
+
+
+.slide-lista-ativo {
+    opacity: 1 !important;
+}
+.slide-radio{
+   display: none;
+}
+.slide-radios{
+    display: none;
+ }
+ 
+
